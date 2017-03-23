@@ -23,5 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }));
     chrome.browserAction.setBadgeText({ text: '' });
-    chrome.alarms.create("quakes-nz", { delayInMinutes: 1, periodInMinutes: 1 });
+    chrome.alarms.create("quakes-nz", { delayInMinutes: 5, periodInMinutes: 15 });
 });

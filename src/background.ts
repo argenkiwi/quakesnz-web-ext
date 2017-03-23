@@ -34,6 +34,6 @@ chrome.alarms.onAlarm.addListener((alarm) => {
 });
 
 chrome.runtime.onInstalled.addListener(() => chrome.alarms.create("quakes-nz", {
-    delayInMinutes: 1,
-    periodInMinutes: 1
+    delayInMinutes: 5,
+    periodInMinutes: 15
 }));
