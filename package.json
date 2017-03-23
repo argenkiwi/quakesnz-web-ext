@@ -1,0 +1,26 @@
+{
+  "name": "quakes-nz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "source-map-loader": "^0.2.0",
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "@types/chrome": "0.0.42",
+    "@types/moment": "^2.13.0",
+    "@types/react": "^15.0.18",
+    "@types/react-dom": "^0.14.23",
+    "moment": "^2.18.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
