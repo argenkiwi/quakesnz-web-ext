@@ -6,6 +6,7 @@ import { fetchQuakes } from "./fetch";
 import { Quake } from "./components/Quake";
 
 document.addEventListener('DOMContentLoaded', () => {
+    chrome.browserAction.setBadgeText({ text: '' });
     chrome.storage.sync.get({
         intensity: 1
     }, (options: Options) => fetchQuakes(options.intensity, (req) => {
@@ -26,6 +27,4 @@ document.addEventListener('DOMContentLoaded', () => {
             } else console.log("Error loading quakes.");
         }
     }));
-    chrome.browserAction.setBadgeText({ text: '' });
-    chrome.alarms.create("quakes-nz", { delayInMinutes: 5, periodInMinutes: 15 });
 });
