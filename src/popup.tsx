@@ -2,8 +2,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Feature } from "./model/Feature";
 import { Options } from "./model/Options";
-import { App } from "./components/App";
 import { fetchQuakes } from "./fetch";
+import { Quake } from "./components/Quake";
 
 document.addEventListener('DOMContentLoaded', () => {
     chrome.storage.sync.get({
@@ -13,7 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (req.status == 200) {
                 let features: Feature[] = JSON.parse(req.responseText).features;
                 ReactDOM.render(
-                    <App features={features} />,
+                    <div>
+                        {features.map((feature) => 
+                        <Quake key={feature.properties.publicID} geometry={feature.geometry} properties={feature.properties} />
+                        )}
+                    </div>,
                     document.getElementById("root")
                 );
                 if (features && features.length > 0) {

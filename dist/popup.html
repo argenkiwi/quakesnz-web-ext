@@ -10,6 +10,107 @@
             height: 480px;
         }
     </style>
+    <style>
+        html {
+            font-size: 12pt
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .quake {
+            margin: 0.1em;
+            box-sizing: border-box;
+            width: 100%;
+            display: inline-block;
+            font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            border-width: 0 0.3em 0 0;
+            border-style: solid;
+            border-color: transparent;
+            box-shadow: 0 0 0.04em 0.04em lightgrey;
+            border-radius: 0.2em;
+            padding: 0.2em;
+        }
+        
+        .Weak {
+            border-right-color: #1f74ba
+        }
+        
+        .Light {
+            border-right-color: #00ab31
+        }
+        
+        .Moderate {
+            border-right-color: #fee303
+        }
+
+        .Strong {
+            border-right-color: #f88600
+        }
+        
+        .Severe {
+            border-right-color: #ff00ff
+        }
+        
+        .Weak .magnitude {
+            color: #1f74ba
+        }
+        
+        .Light .magnitude {
+            color: #00ab31
+        }
+
+        .Moderate .magnitude {
+            color: #fee303
+        }
+        
+        .Strong .magnitude {
+            color: #f88600
+        }
+        
+        .Severe .magnitude {
+            color: #ff0000
+        }
+        
+        .magnitude,
+        .intensity,
+        .time,
+        .depth,
+        .location {
+            display: block
+        }
+        
+        .magnitude {
+            float: left;
+            font-size: 1.5em;
+            padding: 0.2em;
+        }
+        
+        .first {
+            vertical-align: -75%;
+            font-size: 3.25em;
+            line-height: 0.75em;
+        }
+        
+        .intensity {
+            padding-top: 0.2em;
+            font-size: 1.5em;
+        }
+        
+        .time {
+            float: right
+        }
+        
+        .depth {
+            color: grey
+        }
+        
+        .location {
+            font-size: 1.2em
+        }
+    </style>
 </head>
 
 <body>
