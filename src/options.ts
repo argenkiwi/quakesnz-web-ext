@@ -2,7 +2,7 @@ import { Options } from "./model/Options";
 
 document.addEventListener('DOMContentLoaded', () => {
     chrome.storage.sync.get({
-        intensity: 1,
+        intensity: 3,
         notifications: true
     }, function (items: Options) {
         let form = <HTMLFormElement>document.forms[0];
@@ -23,7 +23,10 @@ document.forms[0].addEventListener('submit', (event) => {
         status.textContent = 'Options saved.';
         setTimeout(() => status.textContent = '', 750);
         if (notificationsEnabled) {
-            chrome.alarms.create("quakes-nz", { delayInMinutes: 1, periodInMinutes: 15 });
+            chrome.alarms.create("quakes-nz", {
+                delayInMinutes: 1,
+                periodInMinutes: 15
+            });
         } else chrome.alarms.clear('quakes-nz');
     });
 });
