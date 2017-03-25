@@ -33,7 +33,7 @@ export class PopUp extends React.Component<PopUpProps, PopUpState> {
     render() {
         return this.state.features.length ? (
             <div>
-                {this.state.features.map((feature) =>
+                {this.state.features.map(feature =>
                     <Quake key={feature.properties.publicID}
                         geometry={feature.geometry}
                         properties={feature.properties} />

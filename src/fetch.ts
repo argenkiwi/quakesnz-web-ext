@@ -6,9 +6,9 @@ export function fetchQuakes(mmi: number,
     let req = new XMLHttpRequest();
     req.open('GET', "https://api.geonet.org.nz/quake?MMI=" + mmi);
     req.onload = () => {
-        let features = JSON.parse(req.responseText).features;
         if (req.status === 200) {
-            if (features.length > 0) chrome.storage.sync.set({
+            let features = JSON.parse(req.responseText).features;
+            if (features.length) chrome.storage.sync.set({
                 latest: Date.parse(features[0].properties.time)
             });
             onSuccess(features);
