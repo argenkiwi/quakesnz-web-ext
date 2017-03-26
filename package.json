@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@types/chrome": "0.0.42",
-    "@types/moment": "^2.13.0",
     "@types/react": "^15.0.18",
     "@types/react-dom": "^0.14.23",
     "moment": "^2.18.1",
