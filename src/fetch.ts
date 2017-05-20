@@ -3,7 +3,7 @@ import { Feature } from "./model/Feature";
 export function fetchQuakes(mmi: number,
     onSuccess: (features: Feature[]) => void,
     onError?: (error: string) => void) {
-    window.fetch('https://api.geonet.org.nz/quake?MMI=' + mmi)
+    fetch('https://api.geonet.org.nz/quake?MMI=' + mmi)
         .then(response => response.json())
         .then(data => data.features)
         .then(features => {
