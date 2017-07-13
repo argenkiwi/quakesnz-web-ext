@@ -1,18 +1,18 @@
 import * as React from "react";
-import { Feature } from "../model/Feature";
-import { Quake } from "./Quake";
+import Feature from "../model/Feature";
 import { fetchQuakes } from "../fetch";
+import Quake from "./Quake";
 
-export interface PopUpProps {
+interface PopUpProps {
     mmi: number;
 }
 
-export interface PopUpState {
+interface PopUpState {
     features: Feature[];
     error?: string;
 }
 
-export class PopUp extends React.Component<PopUpProps, PopUpState> {
+class PopUp extends React.Component<PopUpProps, PopUpState> {
     constructor(props: PopUpProps) {
         super(props);
         this.state = {
@@ -31,14 +31,15 @@ export class PopUp extends React.Component<PopUpProps, PopUpState> {
     }
 
     render() {
-        return this.state.features.length ? (
+        const { features, error } = this.state;
+        return features.length ? (
             <div>
-                {this.state.features.map(feature =>
-                    <Quake key={feature.properties.publicID}
-                        geometry={feature.geometry}
-                        properties={feature.properties} />
+                {features.map(feature =>
+                    <Quake feature={feature} />
                 )}
             </div>
-        ) : <p>{this.state.error}</p>;
+        ) : <p>{error}</p>;
     }
 }
+
+export default PopUp;

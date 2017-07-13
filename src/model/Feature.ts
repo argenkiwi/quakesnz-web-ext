@@ -1,7 +1,9 @@
-import { Geometry } from "./Geometry";
-import { Properties } from "./Properties";
+import Geometry from "./Geometry";
+import Properties from "./Properties";
 
-export interface Feature {
+interface Feature {
     geometry: Geometry;
     properties: Properties;
 }
+
+export default Feature;

@@ -1,5 +1,7 @@
-export interface Options {
+interface Options {
     notifications: boolean,
     intensity: number;
     latest: number;
 }
+
+export default Options;
