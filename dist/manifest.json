@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Quakes NZ",
-    "version": "0.2",
+    "version": "1.0",
     "description": "See the latest earthquake reports from GeoNet.",
     "icons": {
         "16": "images/icon16.png",
