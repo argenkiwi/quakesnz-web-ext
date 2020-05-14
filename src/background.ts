@@ -1,5 +1,4 @@
 import Options from "./model/Options";
-import Feature from "./model/Feature";
 import { fetchQuakes } from "./fetch";
 import { mmiToColour } from "./utils";
 
