@@ -7,39 +7,27 @@ interface PopUpProps {
     mmi: number;
 }
 
-interface PopUpState {
-    features: Feature[];
-    error?: string;
-}
+const PopUp = (props: PopUpProps) => {
+    const [features, setFeatures] = React.useState<Feature[]>([])
+    const [error, setError] = React.useState<string>(null)
 
-class PopUp extends React.Component<PopUpProps, PopUpState> {
-    constructor(props: PopUpProps) {
-        super(props);
-        this.state = {
-            features: []
-        };
-    }
+    React.useEffect(() => {
+        fetchQuakes(props.mmi, features => {
+            setFeatures(features)
+            setError(null)
+        }, error => {
+            setFeatures([])
+            setError(error)
+        });
+    }, [])
 
-    componentDidMount() {
-        fetchQuakes(this.props.mmi, features => this.setState({
-            features: features,
-            error: null
-        }), error => this.setState({
-            features: [],
-            error: error
-        }));
-    }
-
-    render() {
-        const { features, error } = this.state;
-        return features.length ? (
-            <div>
-                {features.map(feature =>
-                    <Quake feature={feature} />
-                )}
-            </div>
-        ) : <p>{error}</p>;
-    }
+    return features.length ? (
+        <div>
+            {features.map(feature =>
+                <Quake feature={feature} />
+            )}
+        </div>
+    ) : <p>{error}</p>
 }
 
 export default PopUp;

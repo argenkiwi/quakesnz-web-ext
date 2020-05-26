@@ -8,7 +8,7 @@ interface Props {
     feature: Feature;
 }
 
-function Quake({ feature }: Props) {
+const Quake = ({ feature }: Props) => {
     const { properties, geometry } = feature;
     const split = Number(properties.magnitude).toFixed(1).split('.');
     return (
